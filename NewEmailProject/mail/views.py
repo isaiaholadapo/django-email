@@ -56,10 +56,11 @@ def html_email(request):
             subject = request.POST.get("subject")
             email_from = settings.EMAIL_HOST_USER
             message = request.POST.get("message")
+            attachment = request.POST.get("attachment")
 
             msg = EmailMessage(subject, message, email_from, recipient_list, connection=connection)
-            msg.content_subtype = "html"  # Main content is now text/html
+            msg.attach_file(attachment)
             msg.send()
 
-    return render(request, 'mail/send_emails.html')
+    return render(request, 'mail/html_emails.html')
 

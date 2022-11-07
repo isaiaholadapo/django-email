@@ -22,5 +22,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", send_email),
     path("send-emails/", send_emails),
-    path("html-emails/", html_email)
+    path("html-emails/", html_email),
 ]
