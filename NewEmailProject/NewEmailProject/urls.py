@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from mail.views import send_email, send_emails
+from mail.views import send_email, send_emails, html_email
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", send_email),
-    path("send-emails/", send_emails)
+    path("send-emails/", send_emails),
+    path("html-emails/", html_email)
 ]
